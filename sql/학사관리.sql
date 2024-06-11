@@ -339,6 +339,8 @@ select * from students where scode in
 (select scode from enrollments group by scode having avg(grade)>=80);
 
 /*'전산'과 교수들이 담당하는 강좌의 이름, 강의시간수, 강의실을 검색하시오.*/
+select * from courses where instructor in
+(select pcode from professors where dept='전산');
 /*'98/03/02'에 수강신청 한 학생들의 학과, 학번, 학생이름, 학년을 검색하시오.*/
 /*'509'호에서 강의를 듣는 학생들의 학과, 학번, 학생이름을 검색하시오.*/
 /*수강신청 과목의 평균점수가 80점 이상인 학생들의 이름, 학생번호, 소속학과, 학년을 검색하시오.*/
